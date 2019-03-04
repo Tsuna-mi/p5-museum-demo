@@ -51,11 +51,14 @@ let sketch = function(p) {
 	};
 
 	p.keyReleased = function() {
-		console.log(p.key);
 		if (p.key == 's' || p.key == 'S') p.saveCanvas('picture', 'jpg');
 		if (p.keyCode == p.DELETE || p.keyCode == p.BACKSPACE) {
 			p.clear();
 			p.image(img, 0, 0);
+		}
+		if (p.key == ' ') {
+			p.clear();
+			p.noLoop();
 		}
 	};
 };
